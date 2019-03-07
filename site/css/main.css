@@ -1,0 +1,82 @@
+body{
+    margin: 0;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-rows: 80px auto;
+    grid-template-areas: 
+    "header"
+    "main" 
+}
+
+header{
+    background-color: hotpink;
+    display: grid;
+    grid-template-columns: 70px auto 70px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "empty name cart"
+    "m_button s_bar s_button"
+}
+
+.name{
+    grid-area: name;
+
+}
+
+.cart{
+    grid-area: cart;
+
+}
+
+.m_button{
+    grid-area: m_button;
+
+}
+
+.s_bar{
+    grid-area: s_bar;
+    /* width: 80%; */
+    height: 50%;
+    border-radius: 20px;
+    padding: 4px;
+    border: solid 1px black;
+}
+
+.s_button{
+    grid-area: s_button;
+}
+
+main{
+    background-color: peachpuff;
+    height: 100%;
+    grid-area: main;
+}
+
+.item{
+    height: 300px;
+    margin: 10px;
+    background-color: #fff;
+}
+
+menu{
+    display: none
+}
+
+footer{
+    display: none;
+}
+
+@media only screen and (min-width: 1500px){
+
+    .wrapper{
+        display: grid;
+        grid-template-columns: 30% auto;
+        grid-template-rows: 100px 500px auto;
+        grid-template-areas: 
+        "header header"
+        "menu news"
+        "empty main"
+    }
+}
