@@ -6,17 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The Useless-Store</title>
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <div class="m_button"></div>
-            <div class="name"></div>
-            <input class="s_bar"></input>
-            <div class="cart"></div>
-            <div class="s_button"></div>
+            <div class="m_button">
+                <i class="material-icons m_icon" style="font-size: 2.2em">menu</i>
+            </div>
+            <div class="name">
+                <center>The Useless-Store</center>
+            </div>
+            <div class="s_field"><input class="s_bar"></input></div>
+            <div class="cart"><i class="material-icons cart" style="font-size: 2em">shopping_cart</i></div>
+            <div class="s_button"><i class="material-icons search" style="font-size: 2em;">search</i></div>
         </header>
-        <menu></menu>
+        <menu class="hidden_menu">
+            <ul class="menu_list">
+                <li class="menu_li">test</li>
+                <li class="menu_li">test</li>
+                <li class="menu_li">test</li>
+                <li class="menu_li">test</li>
+                <li class="menu_li">test</li>
+                <li class="menu_li">test</li>
+                <li class="menu_li">test</li>
+            </ul>
+        </menu>
+        <div class="dark hidden_dark"></div>
         <div class="news"></div>
         <main>
             <div class="item">
@@ -46,5 +62,7 @@
         </main>
         <footer></footer>
     </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

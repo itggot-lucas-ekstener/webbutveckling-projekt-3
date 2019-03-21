@@ -11,45 +11,65 @@ body{
 }
 
 header{
-    background-color: hotpink;
+    background-color: rgb(252, 122, 0);
     display: grid;
     grid-template-columns: 70px auto 70px;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
     "empty name cart"
-    "m_button s_bar s_button"
+    "m_button s_bar s_button";
+    position: sticky;
+    top: 0;
 }
 
 .name{
     grid-area: name;
-
+    font-size: 2em;
 }
 
 .cart{
     grid-area: cart;
-
+    display: flex; 
+    align-items: center;
+    justify-content: center;
 }
+
 
 .m_button{
     grid-area: m_button;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
 
+.m_button>i{
+    /* margin: 3px; */
+    transition: all .5s;
+}
+
+.s_field{
+    grid-area: s_bar;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .s_bar{
-    grid-area: s_bar;
-    /* width: 80%; */
     height: 50%;
+    width: 90%;
     border-radius: 20px;
-    padding: 4px;
+    padding: 4px 20px;
     border: solid 1px black;
 }
 
 .s_button{
     grid-area: s_button;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
 }
 
 main{
-    background-color: peachpuff;
     height: 100%;
     grid-area: main;
 }
@@ -58,10 +78,53 @@ main{
     height: 300px;
     margin: 10px;
     background-color: #fff;
+    border: 1px solid #555;
+    border-radius: 2px;
+}
+
+.item_image{
+    height: 70%;
+    background-color: #fff;
+}
+
+.item_info{
+    border-top: 1px solid #555;
+    height: 30%;
 }
 
 menu{
-    display: none
+    width: 70%;
+    height: 88vh;
+    display:grid; 
+    grid-template-rows: 100px auto;
+    grid-template-areas: 
+    "";
+    background-color: #fff;
+    position: fixed;
+    top: 12vh;
+    left: 0;
+    z-index: 10;
+    margin: 0;
+    transition: all 0.5s;
+}
+
+.dark{
+    width: 100%;
+    height: 88vh;
+    position: fixed;
+    top: 12vh;
+    z-index: 9;
+    background-color: #000;
+    opacity: 0.7;
+    transition: all .5s;
+}
+
+.hidden_menu{
+    left: -100%
+}
+
+.hidden_dark{
+    opacity: 0;
 }
 
 footer{
