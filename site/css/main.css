@@ -199,9 +199,15 @@ main{
 
 .item_image{
     height: 40vh;
-    background-image: url(../img/useless_box_400x300.jpg);
+    /* background-image: url(../img/useless_box_400x300.jpg); */
     background-position: center;
     background-repeat: no-repeat;
+}
+
+img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .item_info{
@@ -331,7 +337,7 @@ main{
 
 }
 .cart_item_remove{
-    color: red;
+    color: #333;
 
 }
 
@@ -426,6 +432,12 @@ main{
     background-color: #999;
     height: 40vw;
     width: 40vw;
+    background-image: url(../img/chain_fork_small.jpg);
+    background-size: cover;
+}
+
+.product:hover{
+    box-shadow: 0 0 1px 1px var(--main_details_color); 
 }
 
 .dt_only{
@@ -504,6 +516,8 @@ footer{
     .featured .item_image{
         height: 70vh;
         grid-area: image;
+        background-image: url(../img/useless_box_1040x765.jpg);
+        background-size: contain;
     }
 
     .featured .item_info{
@@ -546,7 +560,7 @@ footer{
     #item_details_main{
         display: grid;
         grid-template-columns: auto 30%;
-        grid-template-rows: 50vh auto;
+        grid-template-rows: 60vh auto;
         grid-template-areas: 
         "image price"
         "name name";
@@ -565,7 +579,10 @@ footer{
     .product_image{
         height: 100%;
         grid-area: image;
+        background-image: url(../img/useless_box_1040x765.jpg);
+        background-size: contain;
     }
+    
 
     .product_name{
         grid-area: name;
