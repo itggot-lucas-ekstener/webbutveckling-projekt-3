@@ -1,7 +1,12 @@
 :root {
-    --main_details_color: rgb(252, 59, 0);
+    --main_details_color: rgb(252, 122, 0);
   
-  }
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
 
 body{
     margin: 0;
@@ -9,14 +14,14 @@ body{
 
 .wrapper{
     display: grid;
-    grid-template-rows: 60px auto;
+    grid-template-rows: 15vh auto;
     grid-template-areas: 
     "header"
     "main" 
 }
 
 header{
-    background-color: var(--main_details_color);
+    background-color: #333;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,11 +35,24 @@ header{
     position: sticky;
     top: 0;
     z-index: 11;
+    transition: all 0.3s;
+    font-family: 'Poppins';
+}
+
+.header_hide{
+    top: -15vh;
 }
 
 .name{
+    /* height: 60px; */
+    /* margin-top: 10px; */
+    /* background-color: var(--main_details_color); */
+    border-radius: 15px;
+    /* box-shadow: 0px 0px 2px 1px black; */
+    /* padding: 10px; */
     grid-area: name;
-    font-size: 2em;
+    font-size: 1.8em;
+    color: var(--main_details_color);
 }
 
 /* .cart{
@@ -46,10 +64,20 @@ header{
 
 
 .m_button{
+    /* position: fixed; */
+    height: 60px;
+    width: 60px;
+    background-color: var(--main_details_color);
+    border-radius: 50%;
     grid-area: m_button;
     display: flex; 
     align-items: center;
     justify-content: center;
+    z-index: 11;
+}
+
+.m_button:hover{
+    cursor: pointer;
 }
 
 .m_button>i{
@@ -86,13 +114,14 @@ menu{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background-color: #333;
     position: fixed;
-    top: 60px;
+    top: 14vh;
     right: 0;
     z-index: 10;
     margin: 0;
     transition: all 0.5s;
+    font-family: 'Varela round';
 }
 
 .menu_list{
@@ -104,7 +133,7 @@ menu{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 .menu_li{
@@ -114,12 +143,13 @@ menu{
 }
 
 .menu_li a{
-    color: black;
     text-decoration: none;
+    color: var(--main_details_color);
+    transition: all 0.3s
 }
 
-.menu_li:hover{
-    color: var(--main_details_color);
+.menu_li a:hover{
+    color: #eee;
     cursor: pointer;
 }
 
@@ -132,7 +162,7 @@ menu{
     width: 100%;
     height: 100%;
     position: fixed;
-    top: 60px;
+    top: 15vh;
     z-index: 9;
     background-color: #000;
     opacity: 0.7;
@@ -140,7 +170,8 @@ menu{
 }
 
 .hidden_menu{
-    top: -100%
+    top: -100%;
+    /* right: -200%; */
 }
 
 .hidden_dark{
@@ -151,6 +182,7 @@ menu{
 main{
     height: 100%;
     grid-area: main;
+    font-family: 'Varela round';
 }
 
 /*                 */
@@ -166,11 +198,14 @@ main{
 }
 
 .item_image{
-    height: 200px;
-    background-color: #fff;
+    height: 40vh;
+    background-image: url(../img/useless_box_400x300.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .item_info{
+    background-color: #888;
     border-top: 1px solid #555;
     /* height: 30%; */
     display: grid;
@@ -182,7 +217,7 @@ main{
 }
 
 .item_info_field{
-    padding: 0 10px;
+    padding: 0 25px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -197,19 +232,20 @@ main{
 .item_button_field{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     grid-area: button_field;
+    padding: 0 30px;
 }
 
 .item_button{
     height: 40px;
-    width: 80px;
+    width: 100px;
     border-radius: 2px;
 }
 
 .more_info{
-    background-color: #555;
+    background-color: #222;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -217,22 +253,34 @@ main{
     /* font-size: 1.3em; */
 }
 
+.more_info:hover{
+    color: #333;
+    cursor: pointer;
+}
+
 .add_to_cart{
     background-color: green;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #eee;
+}
+
+.add_to_cart:hover{
     color: #333;
+    cursor: pointer;
 }
 
 .on_sale{
-    background-color: var(--main_details_color);
+    background-color: #333;
     height: 100px;
     margin: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3em;
+    color: var(--main_details_color);
+    border-radius: 5px;
 }
 
 /*          */
@@ -258,7 +306,9 @@ main{
 
 .cart_item{
     height: 80px;
-    border: solid 1px;
+    border-bottom: solid 1px;
+    /* display: grid;
+    grid-template-columns:  */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -272,7 +322,7 @@ main{
     width: 50px;
 }
 .cart_item_name{
-
+    width: 80px;
 }
 .cart_item_quant{
 
@@ -285,19 +335,271 @@ main{
 
 }
 
+.clear{
+    background-color: #777;
+    height: 40px;
+
+    width: min-content;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+}
+.checkout{
+    background-color: green;
+    height: 40px;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    color: #fff;
+}
+
+
+/* Item Details */
+
+.product_image{
+    border: solid 1px;
+    height: 300px;
+    margin: 10px;
+    background-image: url(../img/useless_box_400x300.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.product_name{
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    margin: 10px;
+}
+
+.product_info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.product_price{
+    font-size: 1.6em;
+}
+
+.product_descr{
+    margin: 10px;
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+
+/* products */
+
+.most_popular_title{
+    margin: 10px;
+    border-radius: 5px;
+    height: 10vh;
+    background-color: #333;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main_details_color);
+}
+
+.product_items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+.product{
+    margin: 10px;
+    background-color: #999;
+    height: 40vw;
+    width: 40vw;
+}
+
+.dt_only{
+    display: none;
+}
+
 footer{
     display: none;
 }
 
-@media only screen and (min-width: 1500px){
+@media only screen and (min-width: 900px){
 
     .wrapper{
         display: grid;
-        grid-template-columns: 30% auto;
-        grid-template-rows: 100px 500px auto;
+        grid-template-columns: 15% auto;
+        grid-template-rows: 100px auto;
         grid-template-areas: 
-        "header header"
-        "menu news"
-        "empty main"
+        "menu header"
+        "menu main";
+    }
+
+    header{
+        grid-area: header;
+    }
+    
+    .m_button{
+        display: none;
+    }
+    
+    menu{
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 15%;
+        transition: none;
+    }
+
+    .menu_li{
+        margin: 20px 0;
+    }
+
+    .hidden_menu{
+        top: 0;
+        scale: 1;
+        opacity: 1;
+    }
+
+    #home_main{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .on_sale{
+        width: 100%;
+    }
+
+    .item{
+        width: 45vh;
+    }
+
+    .item_image{
+        height: 35vh;
+    }
+
+    .featured{
+        width: 90%;
+        display: grid;
+        grid-template-columns: auto 200px;
+        grid-template-areas:
+        "image info" 
+    }
+
+    .featured .item_image{
+        height: 70vh;
+        grid-area: image;
+    }
+
+    .featured .item_info{
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-evenly
+    }
+
+    .featured .item_info_field{
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .featured .item_button_field{
+        display: flex;
+        flex-direction: column;
+    }
+    .featured .item_info_field p{
+        margin-top: 20px;
+    }
+
+    .featured .item_name{
+        font-size: 1.5em;
+    }
+
+    .featured .price{
+        font-size: 2em;
+    }
+
+    .featured .item_button{
+        margin: 20px;
+    }
+
+    .dt_only{
+        display: block;
+    }
+
+    #item_details_main{
+        display: grid;
+        grid-template-columns: auto 30%;
+        grid-template-rows: 50vh auto;
+        grid-template-areas: 
+        "image price"
+        "name name";
+    }
+
+    #products_main{
+        /* display: flex; */
+    }
+
+    .product{
+        margin: 20px 10px;
+        height: 40vh;
+        width: 40vh;
+    }
+
+    .product_image{
+        height: 100%;
+        grid-area: image;
+    }
+
+    .product_name{
+        grid-area: name;
+        padding: 20px 0;
+    }
+
+    .product_info{
+        padding: 50px;
+        grid-area: price;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .product_descr{
+        padding: 0;
+    }
+
+    .product_price{
+        font-size: 2em;
+    }    
+
+    #cart_main{
+        padding: 0 200px;
+    }
+
+    .checkout{
+        width: 40%;
+        /* margin: auto; */
+        float: right;
+    }
+
+    .clear{
+        float: left;
+        /* margin: auto; */
     }
 }

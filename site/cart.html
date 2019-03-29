@@ -7,13 +7,16 @@
     <title>The Useless-Store</title>
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600|Ubuntu|Varela+Round" rel="stylesheet">
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <div class="name">
-                <center>The Useless-Store</center>
-            </div>
+            <a href="index.html">
+                <div class="name">
+                    <center>The Useless-Store</center>
+                </div>
+            </a>
             <div class="m_button">
                 <i class="material-icons m_icon" style="font-size: 2.2em">menu</i>
             </div>
@@ -26,29 +29,43 @@
                 <li class="menu_li"><a href="index.html">Home</a></li>
                 <li class="menu_li"><a href="products.html">Products</a></li>
                 <li class="menu_li"><a href="cart.html">Cart</a></li>
-                <li class="menu_li"><a href="about.html">About</a></li>
+                <!-- <li class="menu_li"><a href="about.html">About</a></li> -->
             </ul>
         </menu>
         <div class="dark hidden_dark"></div>
         <div class="news"></div>
-    </div>
-    <main>
-        <div class="your_cart">
-            <p>Your Cart</p>
-        </div>
-        <div class="cart">
-            <div class="cart_item">
-                <div class="cart_item_img"></div>
-                <div class="cart_item_name">Låda</div>
-                <div class="cart_item_quant">2</div>
-                <div class="cart_item_price">249</div>
-                <div class="cart_item_remove"><i class="material-icons">cancel</i></div>
+        <main id="cart_main">
+            <div class="your_cart">
+                <p>Your Cart</p>
             </div>
-            <div class="cart_item"></div>
-            <div class="cart_item"></div>
-            <div class="cart_item"></div>
-        </div>
-    </main>
+            <div class="cart">
+                <div class="column_info"></div>
+                <div class="cart_item">
+                    <div class="cart_item_img"></div>
+                    <div class="cart_item_name">Låda</div>
+                    <div class="cart_item_quant">2</div>
+                    <div class="cart_item_price">249</div>
+                    <div class="cart_item_remove"><i class="material-icons">clear</i></div>
+                </div>
+                <div class="cart_item">
+                    <div class="cart_item_img"></div>
+                    <div class="cart_item_name">På</div>
+                    <div class="cart_item_quant">2</div>
+                    <div class="cart_item_price">249</div>
+                    <div class="cart_item_remove"><i class="material-icons">clear</i></div>
+                </div>
+                <div class="cart_item">
+                    <div class="cart_item_img"></div>
+                    <div class="cart_item_name">Burk</div>
+                    <div class="cart_item_quant">2</div>
+                    <div class="cart_item_price">249</div>
+                    <div class="cart_item_remove"><i class="material-icons">clear</i></div>
+                </div>
+            </div>
+            <div class="checkout">To Checkout</div>
+            <div class="clear">Clear<i class="material-icons">delete_outline</i></div>
+        </main>
+    </div>
     
     <script src="js/main.js"></script>
 </body>

@@ -16,3 +16,19 @@ function appear(event){
 }
 
 
+var prevScrollpos = window.pageYOffset;
+let header = document.getElementById("header")
+let hideClass = "header_hide"
+window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+        if (header.classList.contains(hideClass)){
+                header.classList.remove(hideClass)
+        }
+    } else {
+        if (!header.classList.contains(hideClass)){
+            header.classList.add(hideClass)
+        }
+    }
+    prevScrollpos = currentScrollPos;
+}
